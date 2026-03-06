@@ -1,0 +1,17 @@
+{
+  "name": "crud-tarefas",
+  "version": "1.0.0",
+  "type":"module", 
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "format": "biome format --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "2.4.6"
+  }
+}
