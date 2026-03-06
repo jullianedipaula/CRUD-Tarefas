@@ -1,0 +1,146 @@
+type: collection.insomnia.rest/5.0
+name: CRUD Tarefas
+meta:
+  id: wrk_6969473fb6b14962b48b1e2883d2a0bd
+  created: 1772759673038
+  modified: 1772759707857
+  description: ""
+collection:
+  - url: "{{ _.baseUrl }}/tasks"
+    name: List Tasks
+    meta:
+      id: req_f7bb126df7934958a75b44a805c09c41
+      created: 1674756829172
+      modified: 1772761179861
+      isPrivate: false
+      description: ""
+      sortKey: -1674756855379.25
+    method: GET
+    parameters:
+      - id: pair_c200dd852bf44714b5f654e2d9550b16
+        name: search
+        value: teste
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}/tasks"
+    name: Create Task
+    meta:
+      id: req_e58b5905c7704dee8498d1def129a455
+      created: 1674756864115
+      modified: 1772761229963
+      isPrivate: false
+      description: ""
+      sortKey: -1674756864115
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "HOJE É QUINTA-FEIRA",
+        	"description": "OIOIOIOIOIOI"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}/tasks"
+    name: Update Task
+    meta:
+      id: req_69548d36436d4b7aa185b8d1e6c0b5f5
+      created: 1674756933797
+      modified: 1772760995214
+      isPrivate: false
+      description: ""
+      sortKey: -1674756846643.5
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "TESTANDO",
+        	"description": "TESTEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+        }
+    parameters:
+      - id: pair_21f5b097882049a99ed77236813a9a69
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{% response 'body', 'req_f7bb126df7934958a75b44a805c09c41',
+      'b64::JC4uaWQ=::46b', 'always', 60 %}"
+    name: Delete Task
+    meta:
+      id: req_4917496b28a04def8ab2742bbeb6ea76
+      created: 1674757268713
+      modified: 1772761131203
+      isPrivate: false
+      description: ""
+      sortKey: -1674704178226.25
+    method: DELETE
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}/tasks"
+    name: Complete Task
+    meta:
+      id: req_1edfdafa79ad418f8521733c462a0741
+      created: 1674757994293
+      modified: 1772761002061
+      isPrivate: false
+      description: ""
+      sortKey: -1674704178176.25
+    method: PATCH
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_57ad8b7c9aeb43ae919538ca6c99991c
+    created: 1674756827457
+    modified: 1674756827457
+environments:
+  name: Base Environment
+  meta:
+    id: env_af1fbf00225e4446969e150804131ded
+    created: 1674756827455
+    modified: 1772760958245
+    isPrivate: false
+  data:
+    baseUrl: http://localhost:3333
